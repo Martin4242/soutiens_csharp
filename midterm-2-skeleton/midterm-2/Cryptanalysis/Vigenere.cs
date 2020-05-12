@@ -21,12 +21,42 @@ public class Vigenere
 
     public string Encrypt(string msg)
     {
-        throw new NotImplementedException();
+        int c = 0;
+        string res = "";
+        for (int i = 0; i < msg.Length; i++)
+        {
+            if (Tools.LetterIndex(msg[i]) != -1)
+            {
+                res += Tools.RotChar(msg[i], Convert.ToChar(key[c]));
+                c += 1;
+            }
+            else
+            {
+                res += msg[i];
+            }
+        }
+
+        return res;
     }
 
     public string Decrypt(string cypherText)
     {
-        throw new NotImplementedException();
+        int c = 0;
+        string res = "";
+        for (int i = 0; i < cypherText.Length; i++)
+        {
+            if (Tools.LetterIndex(cypherText[i]) != -1)
+            {
+                res += Tools.RotChar(cypherText[i], Convert.ToChar( -key[c]));
+                c += 1;
+            }
+            else
+            {
+                res += cypherText[i];
+            }
+        }
+
+        return res;
     }
 
     public static string GuessKeyWithLength(string cypherText, int keyLength)
