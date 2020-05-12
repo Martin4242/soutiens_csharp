@@ -4,15 +4,31 @@ namespace Cryptanalysis
 {
 public class Vigenere
 {
+    private string key;
     public const float FrenchIndexOfCoincidence = 0.0778F;
     public Vigenere(string key)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < key.Length; i++)
+        {
+            if (Tools.LetterIndex(key[i]) == -1 )
+            {
+                throw new ArgumentException("la key n'est pas une lettre");
+            }
+        }
+        
+        this.key = key;
     }
 
     public string Encrypt(string msg)
     {
-        throw new NotImplementedException();
+        int c = 0;
+        for (int i = 0; i < msg.Length; i++)
+        {
+            if (Tools.LetterIndex(msg[i]) != -1)
+            {
+                
+            }
+        }
     }
 
     public string Decrypt(string cypherText)
