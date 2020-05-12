@@ -33,7 +33,17 @@ public class Caesar
     
     public static int GuessKey(string cypherText)
     {
-        throw new NotImplementedException();
+        int[] hist = Tools.Histogram(cypherText);
+        int res = 0;
+        for (int i = 0; i < hist.Length - 1; i++)
+        {
+            if (hist[i] > hist[i-1])
+            {
+                res = i;
+            }
+        }
+
+        return res - 4;
     }
 }
 }
