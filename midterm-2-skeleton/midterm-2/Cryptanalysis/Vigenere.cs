@@ -21,14 +21,7 @@ public class Vigenere
 
     public string Encrypt(string msg)
     {
-        int c = 0;
-        for (int i = 0; i < msg.Length; i++)
-        {
-            if (Tools.LetterIndex(msg[i]) != -1)
-            {
-                
-            }
-        }
+        throw new NotImplementedException();
     }
 
     public string Decrypt(string cypherText)
