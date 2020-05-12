@@ -34,6 +34,11 @@ public class Vigenere
             {
                 res += msg[i];
             }
+            
+            if (c == key.Length - 1)
+            {
+                c = 0;
+            }
         }
 
         return res;
@@ -53,6 +58,11 @@ public class Vigenere
             else
             {
                 res += cypherText[i];
+            }
+
+            if (c == key.Length - 1)
+            {
+                c = 0;
             }
         }
 
