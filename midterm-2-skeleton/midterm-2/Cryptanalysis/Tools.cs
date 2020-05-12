@@ -89,7 +89,22 @@ public static class Tools
 
     public static string Extract(string str, int start, int step)
     {
-        throw new NotImplementedException();
+        string res = "";
+        string res2 = "";
+        int j = 0;
+        
+        for (int i = start; i < str.Length; i++)
+        {
+            res += str[i];
+        }
+
+        while (j < res.Length)
+        {
+            res2 += res[j];
+            j += step;
+        }
+        
+        return res2;
     }
 }
 }
